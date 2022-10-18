@@ -71,12 +71,28 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
         [[params.hobbies.list]]
         interest = "Social Media"
 
+    # Digital Skills section
+    [params.digital]
+        title = "Digital Skills"
+
+		[[params.digital.list]]
+        skill = "Operating Systems Configuration"
+
+		[[params.digital.list]]
+        skill = "Oracle VM VirtualBox"
+
+		[[params.digital.list]]
+        skill = "Google Docs / Microsoft Office"
+
+        [[params.digital.list]]
+        skill = "Adobe Photoshop"
+
     [params.aboutme]
         description = "Spanish student currently attending my second year of a Higher Technician degree in Development of Web Applications"
 
     # Experiences section
     [params.experiences]
-        title = "Laboral experience"
+        title = "Laboral Experience"
 
         [[params.jobs.list]]
         position = "INTERNSHIP PERIOD"
@@ -101,16 +117,20 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
     # Skills section
     [params.skills]
-        title = "Skills"
+        title = "Personal Skills"
 
         [[params.skills.list]]
-        skill = "Skill 1, Skill 2"
-        skillrating = 95 # out of 100
-                
+        skill = "Creativity"
+        skillrating = 99 # out of 100
+
         [[params.skills.list]]
-        skill = "Skill 3"
-        skillrating = 90
+        skill = "Empathy"
+        skillrating = 99 # out of 100   
+
+        [[params.skills.list]]
+        skill = "Personal initiative / Dedication"
+        skillrating = 99
 		
         [[params.skills.list]]
-        skill = "Skill 4"
-        skillrating = 80
+        skill = "Teamwork skills"
+        skillrating = 99
