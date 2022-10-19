@@ -8,7 +8,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
     title = "Lucas Arroyo"
     author = "Lucas Arroyo"
     description = "WEB DEVELOPMENT STUDENT"
-    copyright = "Custom copyright message"
+    copyright = "Copyright © 2022 Lucas Arroyo"
     theme = "dark" # `dark` or `light`
     useResources = false
 
@@ -37,13 +37,13 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
         [[params.education.list]]
         degree = "TECHNICIAN IN MICROCOMPUTER SYSTEMS AND NETWORKS"
-        college = "CPIFP LOS ENLACES"
+        college = "CPIFP Los Enlaces"
         website = "https://cpilosenlaces.com/"
         dates = "2019 - 2021"
 
         [[params.education.list]]
         degree = "HIGHER TECHNICIAN IN DEVELOPMENT OF WEB APPLICATIONS"
-        college = "CPIFP LOS ENLACES"
+        college = "CPIFP Los Enlaces"
         website = "https://cpilosenlaces.com/"
         dates = "2021 - CURRENT"
 
@@ -76,7 +76,13 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
         title = "Digital Skills"
 
 		[[params.digital.list]]
-        skill = "Operating Systems Configuration"
+        skill = "Operating Systems Installation / Configuration"
+
+        [[params.digital.list]]
+        skill = "Java Programming Language"
+
+        [[params.digital.list]]
+        skill = "HTML / CSS / JavaScript"
 
 		[[params.digital.list]]
         skill = "Oracle VM VirtualBox"
@@ -85,7 +91,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
         skill = "Google Docs / Microsoft Office"
 
         [[params.digital.list]]
-        skill = "Adobe Photoshop"
+        skill = "Adobe Photoshop / Adobe Premiere"
 
     [params.aboutme]
         description = "Spanish student currently attending my second year of a Higher Technician degree in Development of Web Applications"
@@ -125,7 +131,11 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
         [[params.skills.list]]
         skill = "Empathy"
-        skillrating = 99 # out of 100   
+        skillrating = 99 # out of 100  
+
+        [[params.skills.list]]
+        skill = "Patience"
+        skillrating = 99 
 
         [[params.skills.list]]
         skill = "Personal initiative / Dedication"
