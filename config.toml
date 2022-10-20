@@ -1,10 +1,10 @@
-baseURL = "http://example.org/"
+baseURL = "https://l-arroyo.github.io/"
 languageCode = "en-us"
 theme = "sada"
 disableKinds = ["taxonomy", "taxonomyTerm"]
 
 [params]
-    name = "example.org"
+    name = "l-arroyo.github.io"
     title = "Lucas Arroyo"
     author = "Lucas Arroyo"
     description = "WEB DEVELOPMENT STUDENT"
@@ -15,7 +15,7 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
     # Profile section
     [params.profile]
         name = "Lucas Arroyo"
-        photo = "images/profile.jpeg"
+        photo = "./images/profile.jpeg"
 
     # Section for links to social websites
     [params.social]
