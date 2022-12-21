@@ -8,6 +8,8 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
     title = "Lucas Arroyo"
     author = "Lucas Arroyo"
     description = "WEB DEVELOPMENT STUDENT"
+    keywords = "Lucas Arroyo, Web Development, Student, Portfolio, CV, Lucas Arroyo Portfolio, Lucas Arroyo CV, Lucas Arroyo Resume"
+    metaDescription = "I'm Lucas Arroyo, a Web Development student from Spain. This is my portfolio."
     copyright = "Copyright © 2022 Lucas Arroyo"
     theme = "dark" # `dark` or `light`
     useResources = false
@@ -82,6 +84,9 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
         skill = "Java Programming Language"
 
         [[params.digital.list]]
+        skill = "Python Programming Language"
+
+        [[params.digital.list]]
         skill = "HTML / CSS / JavaScript"
 
 		[[params.digital.list]]
@@ -105,21 +110,16 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
         dates = "05/04/2021 – 27/06/2021"
 		link = "https://grupoaragondigital.es/"
         company = "Aragón Digital"
-        details = "Software installing (operating systems, desktop applications and services), computers assembly and maintenance, ofimatic tasks and IT support."
+        details = "**Software installing** (operating systems, desktop applications and services), **computers assembly and maintenance**, **ofimatic tasks** and **IT support**."
 
     # Projects section
     [params.projects]
         title = "Projects"
 
         [[params.projects.list]]
-        title = "Awesome Project 1"
-        url = "#"
-        description = "Description of the *awesome* project 1"
-		
-		[[params.projects.list]]
-        title = "Awesome Project 2"
-        url = "#"
-        description = "Description of the **awesome** project 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        title = "Hola Nerds"
+        url = "https://holanerds.com/"
+        description = "**Editor**, **Designer**, and **Community Manager**"
 
     # Skills section
     [params.skills]
@@ -127,11 +127,11 @@ disableKinds = ["taxonomy", "taxonomyTerm"]
 
         [[params.skills.list]]
         skill = "Creativity"
-        skillrating = 99 # out of 100
+        skillrating = 99
 
         [[params.skills.list]]
         skill = "Empathy"
-        skillrating = 99 # out of 100  
+        skillrating = 99
 
         [[params.skills.list]]
         skill = "Patience"
