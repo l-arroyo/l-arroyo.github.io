@@ -1,0 +1,15 @@
+﻿:root {
+    /* Backgrounds */
+    --primary-bg-color: #151513; /* fondo principal */
+    --secondary-bg-color: #1f1f1c; /* bloques / secciones */
+    --surface-color: #262622; /* tarjetas */
+    /* Text */
+    --primary-color: #e8e3d3; /* tinta clara */
+    --secondary-text-color: #b8b2a3;
+    /* Borders / structure */
+    --decoration-color: #3a3a33; /* líneas / separadores */
+    /* Accents */
+    --accent-primary: #7aa2d6; /* links / títulos */
+    --accent-secondary: #d08c7d; /* énfasis cálido */
+    --highlight: #e6c96a; /* marcador */
+}
