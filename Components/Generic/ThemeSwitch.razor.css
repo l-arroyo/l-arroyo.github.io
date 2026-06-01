@@ -3,12 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
+    width: clamp(30px, 3vw, 38px);
+    height: clamp(30px, 3vw, 38px);
     background-color: var(--primary-bg-color);
-    border-radius: 100%;
+    border-radius: 50%;
     border: 2px solid var(--primary-color);
-    box-shadow: 4px 4px var(--primary-color);
+    box-shadow: clamp(1px, 0.3vw, 3px) clamp(1px, 0.3vw, 3px) var(--primary-color);
+    flex-shrink: 0;
 }
 
 .input {
@@ -22,10 +23,11 @@
 
 .icon {
     position: absolute;
-    top: calc(50% -13px);
-    left: calc(50% -13px);
-    width: 26px;
-    height: 26px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(20px, 2.2vw, 28px);
+    height: clamp(20px, 2.2vw, 28px);
 }
 
     .icon.icon-moon {

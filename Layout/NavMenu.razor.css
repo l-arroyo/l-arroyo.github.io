@@ -1,29 +1,45 @@
 header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .wrapper {
+    overflow: clip;
     position: relative;
-    width: 250px;
-    height: 36px;
+    width: min(600px, 94vw);
+    height: clamp(42px, 4.2vw, 50px);
     background-color: var(--primary-bg-color);
     border: 2px solid var(--primary-color);
-    border-radius: 34px;
+    border-radius: 999px;
     display: flex;
-    flex-direction: row;
-    box-shadow: 4px 4px var(--primary-color);
+    align-items: center;
+    box-shadow: clamp(2px, 0.4vw, 4px) clamp(2px, 0.4vw, 4px) var(--primary-color);
+    gap: clamp(2px, 0.3vw, 4px);
+    padding: clamp(2px, 0.3vw, 4px);
 }
 
 .option {
-    width: 80.5px;
-    height: 28px;
+    flex: 1;
+    height: 100%;
     position: relative;
-    top: 2px;
-    left: 2px;
 }
+
+    .option:has(.theme) {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 2px;
+        flex-shrink: 0;
+    }
 
 .input {
     width: 100%;
     height: 100%;
     position: absolute;
-    left: 0;
-    top: 0;
+    inset: 0;
     appearance: none;
     cursor: pointer;
 }
@@ -32,14 +48,16 @@ header {
     width: 100%;
     height: 100%;
     background-color: var(--primary-bg-color);
-    border-radius: 50px;
+    border-radius: 999px;
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: background-color 0.2s ease;
 }
 
 .span {
     color: var(--primary-color);
+    font-size: clamp(11px, 1.2vw, 14px);
 }
 
 .input:checked + .btn {

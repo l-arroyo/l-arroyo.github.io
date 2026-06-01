@@ -13,9 +13,15 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--heading-font);
     color: var(--primary-color);
+    text-align: center;
 }
 
 p, a {
     font-family: var(--body-font);
     color: var(--primary-color);
+}
+
+a {
+    text-underline-offset: 3px;
+    text-decoration: underline 1px wavy;
 }
