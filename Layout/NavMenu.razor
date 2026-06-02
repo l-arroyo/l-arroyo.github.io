@@ -3,21 +3,21 @@
 <header class="p-3">
     <div class="wrapper">
 
-        <div class="option">
+        <div role="button" class="option" @onclick="@(() => Navigate(""))">
             <input class="input" type="radio" name="btn" value="option1" checked="">
             <div class="btn">
-                <span class="span">Option</span>
+                <span class="span">Home</span>
             </div>
         </div>
 
-        <div class="option">
+        <div role="button" class="option">
             <input class="input" type="radio" name="btn" value="option2">
             <div class="btn">
                 <span class="span">Option</span>
             </div>
         </div>
 
-        <div class="option">
+        <div role="button" class="option">
             <input class="input" type="radio" name="btn" value="option3">
             <div class="btn">
                 <span class="span">Option</span>
@@ -31,5 +31,13 @@
 </header>
 
 @code {
+
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = default!;
+
+    private void Navigate(string page)
+    {
+        NavigationManager.NavigateTo($"/{page}");
+    }
 
 }

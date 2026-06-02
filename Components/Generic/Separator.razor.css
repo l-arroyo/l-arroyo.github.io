@@ -1,0 +1,8 @@
+﻿hr {
+    border: none;
+    height: 24px;
+    color: var(--decoration-color);
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 24'%3E%3Cpath d='M0 12 Q 10 0 20 12 T 40 12 T 60 12 T 80 12 T 100 12 T 120 12' fill='none' stroke='currentColor' stroke-width='2'/%3E%3C/svg%3E") repeat-x;
+    background-size: 120px 24px;
+    opacity: 0.8;
+}

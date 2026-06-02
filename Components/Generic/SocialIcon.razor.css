@@ -1,0 +1,25 @@
+﻿.social {
+    width: clamp(30px, 3vw, 38px);
+    height: clamp(30px, 3vw, 38px);
+    border-radius: 100%;
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-bg-color);
+    box-shadow: clamp(1px, 0.3vw, 3px) clamp(1px, 0.3vw, 3px) var(--primary-color);
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+    .social:active {
+        box-shadow: 0px 0px var(--primary-color);
+        transform: translate(3px, 3px);
+    }
+
+.icon {
+    width: clamp(20px, 2.2vw, 28px);
+    height: clamp(20px, 2.2vw, 28px);
+    fill: var(--primary-color);
+}

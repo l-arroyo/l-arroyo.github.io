@@ -1,14 +1,24 @@
-﻿<button class="button" @onclick="OnClick">
-    @Text
-</button>
+﻿<div class="@Class" style="@Style">
+    <button @onclick="OnClick" class="button">
+        @Text
+    </button>
+</div>
 
 @code {
 
     #region Parameters
 
+    [Parameter]
     public required string Text { get; set; }
 
+    [Parameter]
     public EventCallback OnClick { get; set; }
+
+    [Parameter]
+    public string? Class { get; set; }
+
+    [Parameter]
+    public string? Style { get; set; }
 
     #endregion
 

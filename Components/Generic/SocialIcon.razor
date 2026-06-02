@@ -1,0 +1,16 @@
+﻿<a class="social" href="@Href" target="_blank" rel="noopener noreferrer">
+    @ChildContent
+</a>
+
+@code {
+
+    #region Parameters
+
+    [Parameter]
+    public required RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public required string Href { get; set; }
+
+    #endregion
+}
