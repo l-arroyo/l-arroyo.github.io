@@ -1,0 +1,21 @@
+﻿footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    gap: 0.4rem;
+}
+
+@media (max-width: 576px) {
+
+    footer {
+        padding-bottom: 3rem;
+    }
+}
+
+.footer-links {
+    display: flex;
+    gap: 0.6rem;
+}

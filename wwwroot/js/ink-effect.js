@@ -190,6 +190,40 @@
             .trim();
     }
 
+    function isBackgroundClick(target) {
+
+        if (!target)
+            return false;
+
+        const interactiveSelector = `
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        a,
+        small,
+        button,
+        input,
+        textarea,
+        select,
+        label,
+        summary,
+        details,
+        [role="button"],
+        [role="link"],
+        [contenteditable="true"],
+        .btn,
+        .form-control,
+        .nav-link,
+        img
+        `;
+
+        return !target.closest(interactiveSelector);
+    }
+
     function initEvents() {
 
         document.addEventListener(
@@ -197,6 +231,9 @@
             e => {
 
                 if (e.button !== 0)
+                    return;
+
+                if (!isBackgroundClick(e.target))
                     return;
 
                 pointerDown(

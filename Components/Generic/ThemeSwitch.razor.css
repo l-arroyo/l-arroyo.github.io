@@ -51,3 +51,7 @@
     box-shadow: 0px 0px var(--primary-color);
     transform: translate(3px, 3px);
 }
+
+.theme:hover {
+    background-color: var(--secondary-bg-color);
+}

@@ -61,6 +61,10 @@ header .wrapper {
     font-size: clamp(11px, 1.2vw, 14px);
 }
 
+input:hover + .btn {
+    background-color: var(--secondary-bg-color);
+}
+
 .input:checked + .btn {
     background-color: var(--primary-color);
 }

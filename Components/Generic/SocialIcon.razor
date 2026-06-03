@@ -1,4 +1,4 @@
-﻿<a class="social" href="@Href" target="_blank" rel="noopener noreferrer">
+﻿<a class="social" href="@Href" target="@(NewTab ? "_blank" : "_self")" rel="noopener noreferrer">
     @ChildContent
 </a>
 
@@ -11,6 +11,9 @@
 
     [Parameter]
     public required string Href { get; set; }
+
+    [Parameter]
+    public bool NewTab { get; set; } = true;
 
     #endregion
 }

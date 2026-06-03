@@ -25,7 +25,7 @@ h2 {
     margin-bottom: clamp(12px, 2.5vw, 32px);
 }
 
-p, a, span {
+p, a, span, small {
     font-family: var(--body-font);
     color: var(--primary-color);
 }
@@ -56,19 +56,23 @@ section:not(#hero) {
     margin-inline: auto;
 }
 
-@media (max-width: 576px) {
-
-    section:not(#hero) {
-        padding-top: 15dvh;
-        padding-bottom: 15dvh;
-    }
-}
-
 #hero {
     width: 100%;
     align-items: center;
     text-align: center;
     padding-bottom: 15rem;
+}
+
+@media (max-width: 576px) {
+
+    #hero {
+        padding-bottom: 9rem;
+    }
+
+    section:not(#hero) {
+        padding-top: 15dvh;
+        padding-bottom: 15dvh;
+    }
 }
 
 #pfp {
@@ -82,12 +86,21 @@ section:not(#hero) {
     border: solid clamp(2px, 0.4vw, 6px) var(--primary-color);
 }
 
-.timemark {
+.timemark, .project {
     padding-bottom: 2rem;
 }
 
-.timemark h3 {
-    text-align: start;
-    font-size: 130%;
-    letter-spacing: -1px;
+    .timemark h3, .project h3 {
+        text-align: start;
+        font-size: 130%;
+        letter-spacing: -1px;
+    }
+
+    .timemark span, .project span {
+        font-weight: 700;
+    }
+
+.project img {
+    width: 100%;
+    border-radius: 15px;
 }
