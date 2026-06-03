@@ -73,6 +73,10 @@ section:not(#hero) {
         padding-top: 15dvh;
         padding-bottom: 15dvh;
     }
+
+    h2 {
+        text-align: start;
+    }
 }
 
 #pfp {
@@ -83,7 +87,7 @@ section:not(#hero) {
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    border: solid clamp(2px, 0.4vw, 6px) var(--primary-color);
+    /*border: solid clamp(2px, 0.4vw, 6px) var(--primary-color);*/
 }
 
 .timemark, .project {

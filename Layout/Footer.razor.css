@@ -1,4 +1,5 @@
 ﻿footer {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,4 +19,8 @@
 .footer-links {
     display: flex;
     gap: 0.6rem;
+}
+
+small {
+    margin-bottom: 0.5rem;
 }

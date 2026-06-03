@@ -1,4 +1,6 @@
-﻿<footer>
+﻿@using Portfolio.Components.Generic
+
+<footer>
     <p>Thanks for stopping by.</p>
 
     <div class="footer-links">
@@ -177,8 +179,21 @@
     <small>
         © 2026 Lucas Arroyo
     </small>
+
+    <AppButton Text="Scroll to top" OnClick="@(() => SetSection("hero"))" />
+
 </footer>
 
 @code {
+
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; } = default!;
+
+    private async Task SetSection(string section)
+    {
+        await JSRuntime.InvokeVoidAsync("scrollToSection", section);
+
+        StateHasChanged();
+    }
 
 }

@@ -3,12 +3,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: clamp(30px, 3vw, 38px);
-    height: clamp(30px, 3vw, 38px);
+    width: clamp(30px, 3vw, 35px);
+    height: clamp(30px, 3vw, 35px);
     background-color: var(--primary-bg-color);
     border-radius: 50%;
     border: 2px solid var(--primary-color);
-    box-shadow: clamp(1px, 0.3vw, 3px) clamp(1px, 0.3vw, 3px) var(--primary-color);
+    box-shadow: clamp(1px, 0.2vw, 2px) clamp(1px, 0.2vw, 2px) var(--primary-color);
     flex-shrink: 0;
 }
 
@@ -26,8 +26,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: clamp(20px, 2.2vw, 28px);
-    height: clamp(20px, 2.2vw, 28px);
+    width: clamp(18px, 2vw, 22px);
+    height: clamp(18px, 2vw, 22px);
 }
 
     .icon.icon-moon {
@@ -48,8 +48,8 @@
 }
 
 .theme:active {
-    box-shadow: 0px 0px var(--primary-color);
-    transform: translate(3px, 3px);
+    box-shadow: 0 0 var(--primary-color);
+    transform: translate(1.5px, 1.5px);
 }
 
 .theme:hover {
