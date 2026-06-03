@@ -1,0 +1,64 @@
+﻿<div class="slider">
+
+    <img src="@Images[_currentImage]"
+         alt="@AltText" />
+
+    <button class="slider-btn prev" @onclick="Previous">
+
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" /></svg>
+
+    </button>
+
+    <button class="slider-btn next" @onclick="Next">
+
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" /></svg>
+
+    </button>
+
+    <div class="slider-dots">
+        @for (var i = 0; i < Images.Count; i++)
+        {
+            var index = i;
+
+            <button class="dot @(index == _currentImage ? "active" : "")"
+                    @onclick="() => GoTo(index)">
+            </button>
+        }
+    </div>
+
+</div>
+
+@code {
+
+    #region Parameters
+
+    [Parameter]
+    public required List<string> Images { get; init; }
+
+    [Parameter]
+    public required string AltText { get; init; }
+
+    #endregion
+
+    #region Variables
+
+    private int _currentImage;
+
+    #endregion
+
+    private void Next()
+    {
+        _currentImage = (_currentImage + 1) % Images.Count;
+    }
+
+    private void Previous()
+    {
+        _currentImage = (_currentImage - 1 + Images.Count) % Images.Count;
+    }
+
+    private void GoTo(int index)
+    {
+        _currentImage = index;
+    }
+
+}
