@@ -1,30 +1,31 @@
 ﻿window.sectionObserver = {
 
-    observeSections: () => {
+    init: (dotnetHelper) => {
 
         const sections = document.querySelectorAll("section[id]");
 
-        const observer = new IntersectionObserver(entries => {
+        const observer = new IntersectionObserver((entries) => {
 
-            entries.forEach(entry => {
+            let visible = entries
+                .filter(e => e.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-                if (!entry.isIntersecting)
-                    return;
+            if (!visible) return;
 
-                const id = entry.target.id;
+            const id = visible.target.id;
 
-                history.replaceState(
-                    null,
-                    "",
-                    `${window.location.pathname}#${id}`
-                );
+            dotnetHelper.invokeMethodAsync("ShouldIgnoreObserver")
+                .then(ignore => {
 
-            });
+                    if (ignore) return;
+
+                    dotnetHelper.invokeMethodAsync("SetActiveSection", id);
+                });
 
         }, {
-            threshold: 0.5
+            threshold: [0.3, 0.5, 0.7]
         });
 
-        sections.forEach(section => observer.observe(section));
+        sections.forEach(s => observer.observe(s));
     }
 };

@@ -12,7 +12,7 @@
     <h1>Lucas Arroyo</h1>
     <h6>Full Stack Developer</h6>
 
-    <AppButton OnClick="@(() => Navigate("#about"))" Text="About me" Class="pt-3" />
+    <AppButton OnClick="@(() => SetSection("about"))" Text="About me" Class="pt-3" />
 
 </section>
 
@@ -187,9 +187,6 @@
 @code {
 
     [Inject]
-    public NavigationManager NavigationManager { get; set; } = default!;
-
-    [Inject]
     public IJSRuntime JSRuntime { get; set; } = default!;
 
     #region Variables
@@ -207,14 +204,15 @@
     {
         if (firstRender)
         {
-            await JSRuntime.InvokeVoidAsync("sectionObserver.observeSections");
             await JSRuntime.InvokeVoidAsync("inkEffect.init");
         }
     }
 
-    private void Navigate(string page)
+    private async Task SetSection(string section)
     {
-        NavigationManager.NavigateTo($"/{page}");
+        await JSRuntime.InvokeVoidAsync("scrollToSection", section);
+
+        StateHasChanged();
     }
 
 }
