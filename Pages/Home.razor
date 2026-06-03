@@ -178,8 +178,35 @@
             and backend.
         </p>
 
-        <img src="/img/SongSpotter-1.jpg" alt="SongSpotter Project Image" />
+        <div class="project-slider">
 
+            <img src="@Images[_currentImage]"
+                 alt="SongSpotter Project Image" />
+
+            <button class="slider-btn prev" @onclick="Previous">
+
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" /></svg>
+
+            </button>
+
+            <button class="slider-btn next" @onclick="Next">
+
+                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" /></svg>
+
+            </button>
+
+            <div class="slider-dots">
+                @for (var i = 0; i < Images.Count; i++)
+                {
+                    var index = i;
+
+                    <button class="dot @(index == _currentImage ? "active" : "")"
+                            @onclick="() => GoTo(index)">
+                    </button>
+                }
+            </div>
+
+        </div>
     </article>
 
 </section>
@@ -192,6 +219,19 @@
     [Inject]
     public IJSRuntime JSRuntime { get; set; } = default!;
 
+    #region Variables
+
+    private readonly List<string> Images =
+    [
+        "/img/SongSpotter-1.jpg",
+            "/img/SongSpotter-2.jpg",
+            "/img/SongSpotter-3.jpg"
+    ];
+
+    private int _currentImage;
+
+    #endregion
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -203,6 +243,21 @@
     private void Navigate(string page)
     {
         NavigationManager.NavigateTo($"/{page}");
+    }
+
+    private void Next()
+    {
+        _currentImage = (_currentImage + 1) % Images.Count;
+    }
+
+    private void Previous()
+    {
+        _currentImage = (_currentImage - 1 + Images.Count) % Images.Count;
+    }
+
+    private void GoTo(int index)
+    {
+        _currentImage = index;
     }
 
 }
