@@ -3,24 +3,31 @@
 <header class="p-3">
     <div class="wrapper">
 
-        <div role="button" class="option" @onclick="@(() => Navigate(""))">
+        <div role="button" class="option" @onclick="@(() => Navigate("#hero"))">
             <input class="input" type="radio" name="btn" value="option1" checked="">
             <div class="btn">
                 <span class="span">Home</span>
             </div>
         </div>
 
-        <div role="button" class="option">
+        <div role="button" class="option" @onclick="@(() => Navigate("#about"))">
             <input class="input" type="radio" name="btn" value="option2">
             <div class="btn">
-                <span class="span">Option</span>
+                <span class="span">About me</span>
             </div>
         </div>
 
-        <div role="button" class="option">
+        <div role="button" class="option" @onclick="@(() => Navigate("#experience"))">
             <input class="input" type="radio" name="btn" value="option3">
             <div class="btn">
-                <span class="span">Option</span>
+                <span class="span">Experience</span>
+            </div>
+        </div>
+
+        <div role="button" class="option" @onclick="@(() => Navigate("#projects"))">
+            <input class="input" type="radio" name="btn" value="option4">
+            <div class="btn">
+                <span class="span">Projects</span>
             </div>
         </div>
 

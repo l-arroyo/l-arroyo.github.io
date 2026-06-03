@@ -207,6 +207,7 @@
     {
         if (firstRender)
         {
+            await JSRuntime.InvokeVoidAsync("sectionObserver.observeSections");
             await JSRuntime.InvokeVoidAsync("inkEffect.init");
         }
     }
