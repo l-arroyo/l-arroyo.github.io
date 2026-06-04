@@ -6,7 +6,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
   
@@ -48,5 +48,7 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4.5.0
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          branch: gh-pages # The branch the action should deploy to.
-          folder: release/wwwroot # The folder the action should deploy.
+          branch: gh-pages
+          folder: release/wwwroot
+          clean: true
+          force: true
