@@ -4,6 +4,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
 }
 
 header .wrapper {
@@ -58,7 +59,7 @@ header .wrapper {
 
 .span {
     color: var(--primary-color);
-    font-size: clamp(11px, 1.2vw, 14px);
+    font-size: clamp(13px, 1.44vw, 17px);
 }
 
 input:hover + .btn {
@@ -72,3 +73,14 @@ input:hover + .btn {
     .input:checked + .btn .span {
         color: var(--decoration-color);
     }
+
+@media (max-width: 576px) {
+
+    header {
+        padding: 0.5rem;
+    }
+
+    .span {
+        font-size: clamp(13px, 1.42vw, 17px);
+    }
+}
