@@ -25,14 +25,8 @@ jobs:
           dotnet-version: "10.0.x"
 
       # publishes Blazor project to the release folder
-      # NOTA: reemplaza "TuProyecto.csproj" con el nombre real de tu proyecto
       - name: Publish .NET Project
         run: dotnet publish Portfolio.csproj -c Release -o release --nologo
-
-      # changes the base-tag in index.html from '/' to match your GitHub Pages repository subdirectory
-      # NOTA: reemplaza "tu-repositorio" con el nombre real de tu repositorio en GitHub
-      - name: Change base-tag in index.html
-        run: sed -i 's/<base href="\/" \/>/<base href="\/l-arroyo.github.io\/" \/>/g' release/wwwroot/index.html
 
       # copy index.html to 404.html to serve the same file when a file is not found
       - name: copy index.html to 404.html
