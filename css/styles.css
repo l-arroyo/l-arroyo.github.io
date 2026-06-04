@@ -1,0 +1,105 @@
+﻿:root {
+    --heading-font: "Archivo Black", sans-serif;
+    --body-font: "Oswald", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 110%;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+    background-image: radial-gradient(var(--decoration-color) 2px, transparent 0);
+    background-size: 30px 30px;
+    background-position: -5px -5px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    color: var(--primary-color);
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: clamp(12px, 2.5vw, 32px);
+}
+
+p, a, span, small {
+    font-family: var(--body-font);
+    color: var(--primary-color);
+}
+
+a {
+    text-underline-offset: 3px;
+    text-decoration: underline 1px wavy;
+}
+
+#inkCanvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+section {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section:not(#hero) {
+    padding-inline: clamp(16px, 6vw, 120px);
+    max-width: 900px;
+    margin-inline: auto;
+}
+
+#hero {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 15rem;
+}
+
+@media (max-width: 576px) {
+
+    #hero {
+        padding-bottom: 9rem;
+    }
+
+    section:not(#hero) {
+        padding-top: 15dvh;
+        padding-bottom: 15dvh;
+    }
+
+    h2 {
+        text-align: start;
+    }
+}
+
+#pfp {
+    width: clamp(120px, 18vw, 240px);
+    height: clamp(120px, 18vw, 240px);
+    border-radius: 50%;
+    background: url(/img/pfp.jpg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    /*border: solid clamp(2px, 0.4vw, 6px) var(--primary-color);*/
+}
+
+.timemark, .project {
+    padding-bottom: 2rem;
+}
+
+    .timemark h3, .project h3 {
+        text-align: start;
+        font-size: 130%;
+        letter-spacing: -1px;
+    }
+
+    .timemark span, .project span {
+        font-weight: 700;
+    }

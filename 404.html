@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucas Arroyo</title>
+    <base href="/l-arroyo.github.io/" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+
+    <link href="_framework/dotnet.7vnheqogkq.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-7Xbe+iffXamDm2Vhrrq2sP1Dz+I8/Ys1PyR+CvLYTdk=" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+
+    <link id="theme" href="css/themes/light-theme.css" rel="stylesheet" />
+    <!-- <link id="theme" href="css/themes/dark-theme.css" rel="stylesheet" /> -->
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="favicon.webp" />
+    <link href="Portfolio.styles.css" rel="stylesheet" />
+    <script type="importmap">{
+  "imports": {
+    "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.958z1vx7fr.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.7vnheqogkq.js",
+    "./_framework/dotnet.native.js": "./_framework/dotnet.native.rjbmzc4jpg.js",
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.r2kbxkuujc.js"
+  },
+  "scopes": {},
+  "integrity": {
+    "./_framework/blazor.webassembly.958z1vx7fr.js": "sha256-A59Tr9HqEhHMu8kU7kruLI9ayw5MRS6Lvc6z7jCbghk=",
+    "./_framework/blazor.webassembly.js": "sha256-A59Tr9HqEhHMu8kU7kruLI9ayw5MRS6Lvc6z7jCbghk=",
+    "./_framework/dotnet.7vnheqogkq.js": "sha256-7Xbe+iffXamDm2Vhrrq2sP1Dz+I8/Ys1PyR+CvLYTdk=",
+    "./_framework/dotnet.js": "sha256-7Xbe+iffXamDm2Vhrrq2sP1Dz+I8/Ys1PyR+CvLYTdk=",
+    "./_framework/dotnet.native.js": "sha256-95bE510j3EADMNW2OKa/DMBhu8N632dl5HGeBfXNEf4=",
+    "./_framework/dotnet.native.rjbmzc4jpg.js": "sha256-95bE510j3EADMNW2OKa/DMBhu8N632dl5HGeBfXNEf4=",
+    "./_framework/dotnet.runtime.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU=",
+    "./_framework/dotnet.runtime.r2kbxkuujc.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU="
+  }
+}</script>
+
+    <style>
+        .loader {
+            width: 48px;
+            height: 48px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+            .loader:before {
+                content: '';
+                width: 48px;
+                height: 5px;
+                background: #f0808050;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                border-radius: 50%;
+                animation: shadow324 0.5s linear infinite;
+            }
+
+            .loader:after {
+                content: '';
+                width: 100%;
+                height: 100%;
+                background: #f08080;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border-radius: 4px;
+                animation: jump7456 0.5s linear infinite;
+            }
+
+        @keyframes jump7456 {
+            15% {
+                border-bottom-right-radius: 3px;
+            }
+
+            25% {
+                transform: translateY(9px) rotate(22.5deg);
+            }
+
+            50% {
+                transform: translateY(18px) scale(1, .9) rotate(45deg);
+                border-bottom-right-radius: 40px;
+            }
+
+            75% {
+                transform: translateY(9px) rotate(67.5deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(90deg);
+            }
+        }
+
+        @keyframes shadow324 {
+
+            0%, 100% {
+                transform: scale(1, 1);
+            }
+
+            50% {
+                transform: scale(1.2, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="loader"></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="." class="reload">Reload</a>
+        <span class="dismiss">🗙</span>
+    </div>
+    <script src="_framework/blazor.webassembly.958z1vx7fr.js"></script>
+    <script src="js/theme-handler.js"></script>
+    <script src="js/scroll-to-section.js"></script>
+    <script src="js/section-observer.js"></script>
+    <script src="js/ink-effect.js"></script>
+</body>
+
+</html>
