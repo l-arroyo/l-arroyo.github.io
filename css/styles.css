@@ -50,11 +50,15 @@ section {
     justify-content: center;
 }
 
-section:not(#hero) {
-    padding-inline: clamp(16px, 6vw, 120px);
-    max-width: 900px;
-    margin-inline: auto;
-}
+    section:not(#hero):not(#not-found) {
+        padding-inline: clamp(16px, 6vw, 120px);
+        max-width: 900px;
+        margin-inline: auto;
+    }
+
+    section#not-found {
+        text-align: center;
+    }
 
 #hero {
     width: 100%;
@@ -69,7 +73,7 @@ section:not(#hero) {
         padding-bottom: 9rem;
     }
 
-    section:not(#hero) {
+    section:not(#hero):not(#not-found) {
         padding-top: 15dvh;
         padding-bottom: 15dvh;
     }

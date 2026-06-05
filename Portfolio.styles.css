@@ -187,6 +187,13 @@ footer[b-pllgcjyx8e] {
     gap: 0.4rem;
 }
 
+    footer.fixed-layout[b-pllgcjyx8e] {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
 @media (max-width: 576px) {
 
     footer[b-pllgcjyx8e] {
@@ -202,7 +209,6 @@ footer[b-pllgcjyx8e] {
 small[b-pllgcjyx8e] {
     margin-bottom: 0.5rem;
 }
-/* /Layout/MainLayout.razor.rz.scp.css */
 /* /Layout/NavMenu.razor.rz.scp.css */
 header[b-jey3l8hr1c] {
     position: fixed;
