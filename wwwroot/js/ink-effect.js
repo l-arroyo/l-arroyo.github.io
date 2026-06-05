@@ -46,7 +46,8 @@
             from,
             to,
             width: widthFromSpeed(speed),
-            createdAt: performance.now()
+            createdAt: performance.now(),
+            color: inkColor
         });
     }
 
@@ -89,33 +90,20 @@
         ctx.lineCap = "round";
         ctx.lineJoin = "round";
 
-        // Primera pasada
         ctx.beginPath();
-        ctx.moveTo(
-            segment.from.x,
-            segment.from.y
-        );
+        ctx.moveTo(segment.from.x, segment.from.y);
 
-        ctx.quadraticCurveTo(
-            mx,
-            my,
-            segment.to.x,
-            segment.to.y
-        );
+        ctx.quadraticCurveTo(mx, my, segment.to.x, segment.to.y);
 
         ctx.lineWidth = segment.width;
 
-        ctx.strokeStyle = inkColor;
+        ctx.strokeStyle = segment.color;
 
         ctx.stroke();
 
-        // Segunda pasada para textura
         ctx.beginPath();
 
-        ctx.moveTo(
-            segment.from.x + 0.5,
-            segment.from.y + 0.5
-        );
+        ctx.moveTo(segment.from.x + 0.5, segment.from.y + 0.5);
 
         ctx.quadraticCurveTo(
             mx + 0.5,
@@ -124,10 +112,9 @@
             segment.to.y + 0.5
         );
 
-        ctx.lineWidth =
-            segment.width * 0.6;
+        ctx.lineWidth = segment.width * 0.6;
 
-        ctx.strokeStyle = inkColor;
+        ctx.strokeStyle = segment.color;
 
         ctx.stroke();
     }
@@ -181,12 +168,14 @@
         requestAnimationFrame(render);
     }
 
-    function loadCssVariables() {
+    function loadCssVariables(color) {
+
+        var cssVariable = color || "--accent-primary";
 
         inkColor = getComputedStyle(
             document.documentElement
         )
-            .getPropertyValue("--accent-primary")
+            .getPropertyValue(cssVariable)
             .trim();
     }
 
@@ -265,6 +254,10 @@
         );
     }
 
+    function setInkColor(color) {
+        loadCssVariables(color);
+    }
+
     function init() {
 
         canvas =
@@ -293,6 +286,7 @@
     }
 
     return {
+        setInkColor,
         init
     };
 

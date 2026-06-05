@@ -1,0 +1,63 @@
+﻿<div class="color-picker">
+
+    @foreach (var color in _colors)
+    {
+        <button @onclick="@(() => SetColor(color))"
+                class="@GetClass(color)"
+                style="@GetStyle(color)"
+                aria-label="Change color">
+        </button>
+    }
+
+</div>
+
+@code {
+
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; } = default!;
+
+    #region Variables
+
+    private List<string> _colors = new();
+
+    private string _selectedColor = "--accent-primary";
+
+    #endregion
+
+    protected override void OnInitialized()
+    {
+        SetVariables();
+    }
+
+    private void SetVariables()
+    {
+        _colors = new List<string>()
+        {
+            "--accent-primary",
+            "--accent-secondary",
+            "--highlight"
+        };
+    }
+
+    private async Task SetColor(string color)
+    {
+        _selectedColor = color;
+
+        await JSRuntime.InvokeVoidAsync(
+            "inkEffect.setInkColor",
+            color);
+    }
+
+    private string GetStyle(string color)
+    {
+        return $"background-color: var({color})";
+    }
+
+    private string GetClass(string color)
+    {
+        return color == _selectedColor
+            ? "color selected"
+            : "color";
+    }
+
+}
