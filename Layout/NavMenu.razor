@@ -31,12 +31,20 @@
 
 @code {
 
-    [Inject] public IJSRuntime JSRuntime { get; set; } = default!;
+    [Inject]
+    public NavigationManager NavigationManager { get; set; } = default!;
+
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; } = default!;
+
+    #region Variables
 
     private string _activeSection = "hero";
     private bool _ignoreObserver = false;
 
     private DotNetObjectReference<NavMenu>? _objRef;
+
+    #endregion
 
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
@@ -50,6 +58,14 @@
     private async Task SetSection(string section)
     {
         _activeSection = section;
+
+        var uri = new Uri(NavigationManager.Uri);
+
+        if (uri.AbsolutePath != "/")
+        {
+            NavigationManager.NavigateTo($"/#{section}");
+            return;
+        }
 
         _ignoreObserver = true;
 

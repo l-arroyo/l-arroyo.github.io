@@ -1,10 +1,56 @@
 ﻿@inherits LayoutComponentBase
-<div class="page">
-    <NavMenu />
-    <main>
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-    <Footer />
-</div>
+
+<CascadingValue Value="this">
+    <div class="page">
+        <NavMenu />
+        <main>
+            <canvas id="inkCanvas"></canvas>
+
+            <article class="@GetClass()">
+                @Body
+            </article>
+        </main>
+        <Footer Fixed="@_fixed" />
+    </div>
+</CascadingValue>
+
+@code {
+
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; } = default!;
+
+    #region Variables
+
+    private bool _fixed { get; set; } = false;
+
+    private bool _innerPadding { get; set; } = true;
+
+    #endregion
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await JSRuntime.InvokeVoidAsync("inkEffect.init");
+        }
+    }
+
+    public void SetFixedLayout(bool value)
+    {
+        _fixed = value;
+        StateHasChanged();
+    }
+
+    public void SetInnerPadding(bool value)
+    {
+        _innerPadding = value;
+        StateHasChanged();
+    }
+
+    private string GetClass()
+    {
+        return _innerPadding
+        ? "content px-4"
+        : "px-4";
+    }
+}

@@ -3,8 +3,6 @@
 
 <PageTitle>Lucas Arroyo</PageTitle>
 
-<canvas id="inkCanvas"></canvas>
-
 <section id="hero">
 
     <div id="pfp" class="m-2" />
@@ -169,7 +167,7 @@
         </header>
 
         <p>
-            A music discovery platform built with Blazor that helps
+            A music discovery platform built with <strong>Blazor</strong> that helps
             users discover and share new songs through a personalised experience.
         </p>
 
@@ -187,6 +185,9 @@
 @code {
 
     [Inject]
+    public NavigationManager NavigationManager { get; set; } = default!;
+
+    [Inject]
     public IJSRuntime JSRuntime { get; set; } = default!;
 
     #region Variables
@@ -200,11 +201,21 @@
 
     #endregion
 
-    protected override async Task OnAfterRenderAsync(bool firstRender)
+    protected override void OnAfterRender(bool firstRender)
     {
-        if (firstRender)
+        if (!firstRender)
+            return;
+
+        CleanUrl();
+    }
+
+    private void CleanUrl()
+    {
+        var uri = new Uri(NavigationManager.Uri);
+
+        if (!string.IsNullOrEmpty(uri.Fragment))
         {
-            await JSRuntime.InvokeVoidAsync("inkEffect.init");
+            NavigationManager.NavigateTo(uri.GetLeftPart(UriPartial.Path), replace: true);
         }
     }
 

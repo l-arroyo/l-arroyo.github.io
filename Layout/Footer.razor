@@ -1,6 +1,6 @@
 ﻿@using Portfolio.Components.Generic
 
-<footer>
+<footer class="@GetClass()">
     <p>Thanks for stopping by.</p>
 
     <div class="footer-links">
@@ -180,7 +180,10 @@
         © 2026 Lucas Arroyo
     </small>
 
-    <AppButton Text="Scroll to top" OnClick="@(() => SetSection("hero"))" />
+    @if (!Fixed)
+    {
+        <AppButton Text="Scroll to top" OnClick="@SetTop" />
+    }
 
 </footer>
 
@@ -189,11 +192,24 @@
     [Inject]
     public IJSRuntime JSRuntime { get; set; } = default!;
 
-    private async Task SetSection(string section)
+    #region Parameters
+
+    [Parameter]
+    public bool Fixed { get; set; } = false;
+
+    #endregion
+
+    private async Task SetTop()
     {
-        await JSRuntime.InvokeVoidAsync("scrollToSection", section);
+        await JSRuntime.InvokeVoidAsync("scrollToTop");
 
         StateHasChanged();
     }
 
+    private string GetClass()
+    {
+        return Fixed
+            ? "fixed-layout"
+            : "";
+    }
 }
