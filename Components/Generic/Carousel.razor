@@ -3,13 +3,13 @@
     <img src="@Images[_currentImage]"
          alt="@AltText" />
 
-    <button class="slider-btn prev" @onclick="Previous">
+    <button @onclick="Previous" class="slider-btn prev" aria-label="Previous image">
 
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" /></svg>
 
     </button>
 
-    <button class="slider-btn next" @onclick="Next">
+    <button @onclick="Next" class="slider-btn next" aria-label="Next image">
 
         <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" /></svg>
 
@@ -20,8 +20,9 @@
         {
             var index = i;
 
-            <button class="dot @(index == _currentImage ? "active" : "")"
-                    @onclick="() => GoTo(index)">
+            <button @onclick="() => GoTo(index)" 
+                class="dot @(index == _currentImage ? "active" : "")"
+                aria-label="Go to image @(index +1 )">
             </button>
         }
     </div>
