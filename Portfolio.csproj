@@ -6,7 +6,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<OverrideHtmlAssetPlaceholders>true</OverrideHtmlAssetPlaceholders>
 		<PublishTrimmed>true</PublishTrimmed>
-		<TrimMode>full</TrimMode>
+		<TrimMode>partial</TrimMode>
 		<DebuggerSupport>false</DebuggerSupport>
 		<BlazorEnableCompression>true</BlazorEnableCompression>
 	</PropertyGroup>
