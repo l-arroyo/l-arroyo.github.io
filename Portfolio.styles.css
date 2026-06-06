@@ -98,16 +98,28 @@ button:hover[b-yib2s6ls9y] {
 
 .color[b-fc400krgxx] {
     padding: 0.6rem;
-    border: 2px solid var(--primary-color);
     border-radius: 999px;
+    border: 2px solid;
+    border-color: transparent;
 }
+
+    .color:hover[b-fc400krgxx] {
+        border-color: var(--secondary-text-color);
+    }
+
+    .color:active[b-fc400krgxx] {
+        transform: translate(1.5px, 1.5px);
+    }
+
+    .color.selected[b-fc400krgxx] {
+        border-color: var(--primary-color);
+    }
 
 @media (max-width: 576px) {
 
     .color-picker[b-fc400krgxx] {
         display: none;
     }
-
 }
 /* /Components/Generic/Separator.razor.rz.scp.css */
 hr[b-mw6q8oyzgd] {
