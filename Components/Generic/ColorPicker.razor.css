@@ -17,14 +17,26 @@
 
 .color {
     padding: 0.6rem;
-    border: 2px solid var(--primary-color);
     border-radius: 999px;
+    border: 2px solid;
+    border-color: transparent;
 }
+
+    .color:hover {
+        border-color: var(--secondary-text-color);
+    }
+
+    .color:active {
+        transform: translate(1.5px, 1.5px);
+    }
+
+    .color.selected {
+        border-color: var(--primary-color);
+    }
 
 @media (max-width: 576px) {
 
     .color-picker {
         display: none;
     }
-
 }

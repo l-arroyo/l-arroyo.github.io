@@ -5,7 +5,9 @@
         <button @onclick="@(() => SetColor(color))"
                 class="@GetClass(color)"
                 style="@GetStyle(color)"
-                aria-label="Change color">
+                aria-label="Change color"
+                data-bs-toggle="tooltip"
+                data-bs-title="Change color">
         </button>
     }
 

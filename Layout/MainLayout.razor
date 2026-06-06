@@ -33,6 +33,7 @@
     {
         if (firstRender)
         {
+            await JSRuntime.InvokeVoidAsync("triggerTooltips");
             await JSRuntime.InvokeVoidAsync("inkEffect.init");
         }
     }
