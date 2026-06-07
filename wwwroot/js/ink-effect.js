@@ -11,7 +11,9 @@
     const STROKE_LIFETIME = 5000;
     const FADE_DURATION = 500;
 
-    let inkColor = "#4f46e5";
+    const DEFAULT_INK_COLOR = "#4a6fa5";
+
+    let inkColor = DEFAULT_INK_COLOR;
 
     function resize() {
 
@@ -172,11 +174,13 @@
 
         var cssVariable = color || "--accent-primary";
 
-        inkColor = getComputedStyle(
+        const cssColor = getComputedStyle(
             document.documentElement
         )
             .getPropertyValue(cssVariable)
             .trim();
+
+        inkColor = cssColor || DEFAULT_INK_COLOR;
     }
 
     function isBackgroundClick(target) {

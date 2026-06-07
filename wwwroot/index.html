@@ -104,13 +104,16 @@
         <a href="." class="reload">Reload</a>
         <span class="dismiss">🗙</span>
     </div>
-    <script src="_framework/blazor.webassembly#[.{fingerprint}].js"></script>
-    <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/theme-handler.js"></script>
-    <script src="js/scroll-to-section.js"></script>
-    <script src="js/section-observer.js"></script>
-    <script src="js/tooltip-trigger.js"></script>
-    <script src="js/ink-effect.js"></script>
+    <script src="_framework/blazor.webassembly#[.{fingerprint}].js" autostart="false" defer></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/theme-handler.js" defer></script>
+    <script src="js/scroll-to-section.js" defer></script>
+    <script src="js/section-observer.js" defer></script>
+    <script src="js/tooltip-trigger.js" defer></script>
+    <script src="js/ink-effect.js" defer></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => Blazor.start());
+    </script>
 </body>
 
 </html>
