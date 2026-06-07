@@ -28,8 +28,10 @@ button:hover[b-yib2s6ls9y] {
 
     .slider img[b-bdubzun1d1] {
         width: 100%;
+        aspect-ratio: 4 / 3;
         border-radius: 15px;
         display: block;
+        object-fit: cover;
     }
 
 .slider-btn[b-bdubzun1d1] {
