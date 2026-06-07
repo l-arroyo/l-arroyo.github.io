@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
 
-    <link href="_framework/dotnet.u4ocie4sdo.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-0nA8dXTwpHCswGXwD7bOuXab5+rXBbLzbZ9TIGfe7wE=" />
+    <link href="_framework/dotnet.7y9r4yqnel.js" rel="preload" as="script" fetchpriority="high" crossorigin="anonymous" integrity="sha256-HxcFq4VUAD4jV0v0kSLesvuIKuvUvUjoTMlc4oTKM4k=" />
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
 
@@ -25,20 +25,20 @@
     <script type="importmap">{
   "imports": {
     "./_framework/blazor.webassembly.js": "./_framework/blazor.webassembly.958z1vx7fr.js",
+    "./_framework/dotnet.js": "./_framework/dotnet.7y9r4yqnel.js",
     "./_framework/dotnet.native.js": "./_framework/dotnet.native.rjbmzc4jpg.js",
-    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.r2kbxkuujc.js",
-    "./_framework/dotnet.js": "./_framework/dotnet.u4ocie4sdo.js"
+    "./_framework/dotnet.runtime.js": "./_framework/dotnet.runtime.r2kbxkuujc.js"
   },
   "scopes": {},
   "integrity": {
     "./_framework/blazor.webassembly.958z1vx7fr.js": "sha256-A59Tr9HqEhHMu8kU7kruLI9ayw5MRS6Lvc6z7jCbghk=",
     "./_framework/blazor.webassembly.js": "sha256-A59Tr9HqEhHMu8kU7kruLI9ayw5MRS6Lvc6z7jCbghk=",
-    "./_framework/dotnet.js": "sha256-0nA8dXTwpHCswGXwD7bOuXab5+rXBbLzbZ9TIGfe7wE=",
+    "./_framework/dotnet.7y9r4yqnel.js": "sha256-HxcFq4VUAD4jV0v0kSLesvuIKuvUvUjoTMlc4oTKM4k=",
+    "./_framework/dotnet.js": "sha256-HxcFq4VUAD4jV0v0kSLesvuIKuvUvUjoTMlc4oTKM4k=",
     "./_framework/dotnet.native.js": "sha256-95bE510j3EADMNW2OKa/DMBhu8N632dl5HGeBfXNEf4=",
     "./_framework/dotnet.native.rjbmzc4jpg.js": "sha256-95bE510j3EADMNW2OKa/DMBhu8N632dl5HGeBfXNEf4=",
     "./_framework/dotnet.runtime.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU=",
-    "./_framework/dotnet.runtime.r2kbxkuujc.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU=",
-    "./_framework/dotnet.u4ocie4sdo.js": "sha256-0nA8dXTwpHCswGXwD7bOuXab5+rXBbLzbZ9TIGfe7wE="
+    "./_framework/dotnet.runtime.r2kbxkuujc.js": "sha256-YyudibIWETMKrLb+nAZdJ+xDY7HY6BWf6s32UAdcvCU="
   }
 }</script>
 
@@ -122,13 +122,16 @@
         <a href="." class="reload">Reload</a>
         <span class="dismiss">🗙</span>
     </div>
-    <script src="_framework/blazor.webassembly.958z1vx7fr.js"></script>
-    <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/theme-handler.js"></script>
-    <script src="js/scroll-to-section.js"></script>
-    <script src="js/section-observer.js"></script>
-    <script src="js/tooltip-trigger.js"></script>
-    <script src="js/ink-effect.js"></script>
+    <script src="_framework/blazor.webassembly.958z1vx7fr.js" autostart="false" defer></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="js/theme-handler.js" defer></script>
+    <script src="js/scroll-to-section.js" defer></script>
+    <script src="js/section-observer.js" defer></script>
+    <script src="js/tooltip-trigger.js" defer></script>
+    <script src="js/ink-effect.js" defer></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => Blazor.start());
+    </script>
 </body>
 
 </html>
