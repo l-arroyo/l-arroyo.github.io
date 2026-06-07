@@ -1,7 +1,11 @@
 ﻿<div class="slider">
 
     <img src="@Images[_currentImage]"
-         alt="@AltText" />
+         alt="@AltText"
+         width="640"
+         height="480"
+         loading="lazy"
+         decoding="async" />
 
     <button @onclick="Previous"
             class="slider-btn prev"

@@ -5,8 +5,10 @@
 
     .slider img {
         width: 100%;
+        aspect-ratio: 4 / 3;
         border-radius: 15px;
         display: block;
+        object-fit: cover;
     }
 
 .slider-btn {

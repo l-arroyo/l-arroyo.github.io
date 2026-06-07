@@ -1,4 +1,4 @@
-﻿:root {
+:root {
     --heading-font: "Archivo Black", sans-serif;
     --body-font: "Oswald", sans-serif;
 }
@@ -88,10 +88,7 @@ section {
     width: clamp(120px, 18vw, 240px);
     height: clamp(120px, 18vw, 240px);
     border-radius: 50%;
-    background: url(/img/pfp.webp);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
+    object-fit: contain;
     /*border: solid clamp(2px, 0.4vw, 6px) var(--primary-color);*/
 }
 
