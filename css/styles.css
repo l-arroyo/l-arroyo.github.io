@@ -65,7 +65,7 @@ section {
     width: 100%;
     align-items: center;
     text-align: center;
-    padding-bottom: 15rem;
+    padding-bottom: clamp(8rem, 12.5vw, 15rem);
 }
 
 @media (max-width: 576px) {
