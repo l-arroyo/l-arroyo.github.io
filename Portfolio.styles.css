@@ -256,6 +256,7 @@ small[b-pllgcjyx8e] {
 }
 /* /Layout/NavMenu.razor.rz.scp.css */
 header[b-jey3l8hr1c] {
+    z-index: 100;
     position: fixed;
     width: 100%;
     display: flex;
