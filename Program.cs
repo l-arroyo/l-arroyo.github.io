@@ -10,12 +10,12 @@ ConfigureServices(builder.Services, builder.HostEnvironment.BaseAddress);
 
 await builder.Build().RunAsync();
 
-void ConfigureServices(IServiceCollection services, string baseAddress)
+static void ConfigureServices(IServiceCollection services, string baseAddress)
 {
     services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(baseAddress) });
 
     #if !Server
-    builder.Services.AddLocalStorageServices();
+        services.AddLocalStorageServices();
     #endif
-    
+
 }
