@@ -9,10 +9,12 @@
 		<TrimMode>partial</TrimMode>
 		<DebuggerSupport>false</DebuggerSupport>
 		<BlazorEnableCompression>true</BlazorEnableCompression>
+		<BlazorWasmPrerenderingDeleteLoadingContents>true</BlazorWasmPrerenderingDeleteLoadingContents>
 	</PropertyGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Blazor.LocalStorage.WebAssembly" Version="10.0.0" />
+		<PackageReference Include="BlazorWasmPreRendering.Build" Version="10.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.8" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="10.0.8" PrivateAssets="all" />
 	</ItemGroup>
