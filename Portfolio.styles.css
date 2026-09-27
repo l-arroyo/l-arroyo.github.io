@@ -316,6 +316,7 @@ header .wrapper[b-jey3l8hr1c] {
 }
 
 .span[b-jey3l8hr1c] {
+    font-family: var(--body-font);
     color: var(--primary-color);
     font-size: clamp(13px, 1.44vw, 17px);
 }
