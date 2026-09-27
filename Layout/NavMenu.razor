@@ -4,23 +4,23 @@
     <div class="wrapper">
 
         <div class="option" @onclick="@(() => SetSection("hero"))">
-            <input class="input" type="radio" checked="@(_activeSection == "hero")" />
-            <div class="btn"><span class="span">Home</span></div>
+            <input id="hero-nav" class="input" type="radio" checked="@(_activeSection == "hero")" />
+            <div class="btn"><label for="hero-nav" class="span">Home</label></div>
         </div>
 
         <div class="option" @onclick="@(() => SetSection("about"))">
-            <input class="input" type="radio" checked="@(_activeSection == "about")" />
-            <div class="btn"><span class="span">About me</span></div>
+            <input id="about-nav" class="input" type="radio" checked="@(_activeSection == "about")" />
+            <div class="btn"><label for="about-nav" class="span">About me</label></div>
         </div>
 
         <div class="option" @onclick="@(() => SetSection("experience"))">
-            <input class="input" type="radio" checked="@(_activeSection == "experience")" />
-            <div class="btn"><span class="span">Experience</span></div>
+            <input id="experience-nav" class="input" type="radio" checked="@(_activeSection == "experience")" />
+            <div class="btn"><label for="experience-nav" class="span">Experience</label></div>
         </div>
 
         <div class="option" @onclick="@(() => SetSection("projects"))">
-            <input class="input" type="radio" checked="@(_activeSection == "projects")" />
-            <div class="btn"><span class="span">Projects</span></div>
+            <input id="projects-nav" class="input" type="radio" checked="@(_activeSection == "projects")" />
+            <div class="btn"><label for="projects-nav" class="span">Projects</label></div>
         </div>
 
         <div class="option">
