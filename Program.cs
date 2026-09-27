@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.JSInterop;
 using Portfolio;
+using Portfolio.Services;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
@@ -15,7 +17,11 @@ static void ConfigureServices(IServiceCollection services, IWebAssemblyHostEnvir
     services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(hostEnv.BaseAddress) });
 
 #if !Server
-    if (hostEnv.Environment != "Prerendering")
+    if (hostEnv.Environment == "Prerendering")
+    {
+        services.AddScoped<ILocalStorageService, NoOpLocalStorageService>();
+    }
+    else
     {
         services.AddLocalStorageServices();
     }
